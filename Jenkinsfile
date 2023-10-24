@@ -11,7 +11,7 @@ pipeline {
         }
         stage ('Build') {
           steps {
-            sh 'mvn spotless:apply'
+            sh 'mvn com.diffplug.spotless:spotless-maven-plugin:apply'
             sh 'mvn clean install -DskipTests'
           }
         }
