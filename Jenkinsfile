@@ -18,7 +18,7 @@ pipeline {
         }
         stage('Compile') {
             steps {
-                sh "mvn spotless:aplly"
+                sh "mvn spotless:apply"
                 sh "mvn clean install -DskipTests"
             }
         }
