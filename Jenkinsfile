@@ -8,7 +8,6 @@ pipeline {
         maven 'maven3'
         
     }   
-
     stages {
         stage('SCM') {
             steps {
