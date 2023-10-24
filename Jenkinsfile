@@ -4,7 +4,7 @@ pipeline {
         SCANNER_HOME = tool 'sonar'
     }
     tools {
-        jdk 'OpenJDK-21'
+        jdk 'openjdk21'
         maven 'maven3'
         
     }   
