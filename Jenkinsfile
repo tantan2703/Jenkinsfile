@@ -34,9 +34,7 @@ pipeline {
         stage('Sonarqube Analysis') {
             steps {
                withSonarQubeEnv('sonar-server') {
-                   sh '''$SCANNER-HOME/bin/sonar-scanner -Dsonar.projectName=webgoat \ 
-                   -Dsonar.java.binaries=. \ 
-                   -Dsonar.projectKey=webgoat '''
+                   sh '''$SCANNER-HOME/bin/sonar-scanner -X -Dsonar.host.url=http://10.0.2.15:9000 ******** -Dsonar.projectKey=webgoat -Dsonar.projectName=webgoat -Dsonar.language=java -Dsonar.projectVersion=1.0 "-Dsonar.sources=/var/jenkins_home/workspace/Scan Web Goat" -Dsonar.java.binaries=target -Dsonar.exclusions=**/*.ts "-Dsonar.projectBaseDir=/var/jenkins_home/workspace/Scan Web Goat" '''
                }
             }
         }
